@@ -7,7 +7,11 @@ let useHooks = ()=>{
      let {name} = useContext(Context)
     let [array,setArray] = useState([])
         let getapi = ()=>{
-            api.get("/weather?city="+name).then((value)=>{
+         let fristCher = name[0].toUpperCase()
+           let sliceCher = name.slice(1)
+             let newName = fristCher+sliceCher
+             console.log(sliceCher)
+            api.get("/weather?city="+newName).then((value)=>{
                      setArray(value.data)
             })
          }
