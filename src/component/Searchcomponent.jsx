@@ -3,10 +3,10 @@ import { IoIosSearch } from "react-icons/io";
 import { Context } from "./context/context";
 
 let Search = ()=>{
-  let {name,setName} = useContext(Context)
+  let {name,setName,changeName} = useContext(Context)
     return <div className="serach-container">
             <IoIosSearch/>
-          <input type="text" name="" id="input-text" placeholder="Search" onChange={(e)=>{setName(e.target.value)}} />
+          <input type="text" name="" id="input-text" placeholder="Search" onChange={changeName} />
     </div>
 }
 export default Search
