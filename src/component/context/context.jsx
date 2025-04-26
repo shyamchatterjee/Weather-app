@@ -2,8 +2,9 @@ import { createContext, useEffect, useState } from "react";
 
 export let Context = createContext(null)
 export let ContextFuntion = ({children})=>{
-   
+      
       let [name,setName] = useState("")
+      let [array,setArray] = useState({})
       let changeName = (e)=>{
              let inputcity = e.target.value
             
@@ -20,7 +21,7 @@ export let ContextFuntion = ({children})=>{
              setName(city)
       }
      
-     return  <Context.Provider value={{name,setName,changeName}} >
+     return  <Context.Provider value={{name,setName,changeName,array,setArray}} >
              {children}
        </Context.Provider>
 }

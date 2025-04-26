@@ -1,31 +1,36 @@
 import axios from "axios"
 import { useContext, useEffect, useState } from "react"
 import { Context } from "../context/context"
-import { api } from "../../contast/contast"
+
 
 let useHooks = ()=>{
-     let {name} = useContext(Context)
-    let [array,setArray] = useState([])
-        let getapi = ()=>{
-        
-        
+     let {name,array,setArray} = useContext(Context)
+    
+       let apiKey = `d8ffd0df1dfa702d12938225900ecd53`
+        let getApi = ()=>{
            
-            api.get("/weather?city="+name).then((value)=>{
-                     setArray(value.data)
-            })
+           axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${apiKey}&units=metric`).then((value)=>{
+                
+                  setArray(value.data)
+           })
+           
+           
          }
-       useEffect(()=>{
-          if (name=="") {
-                ""
-          }else{
+         
+   
+      let searchFuntion = (name)=>{
+         if (name=="") {
+             ""
+         }else{
 
-          
-             getapi()
-          }
-       },[name])
-      
+         
+            getApi()
+             
+         }
+        
+      }
       
 
-     return({array})
+     return({getApi,searchFuntion})
 }
 export default useHooks
