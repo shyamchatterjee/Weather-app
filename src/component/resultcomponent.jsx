@@ -16,7 +16,7 @@ console.log(array.length)
 return   <div className="wether-container">
        
            
-                    <img  className={array?.name==undefined?"none": ""}      src="https://cdn1.iconfinder.com/data/icons/weather-color-3/515/weather-05-512.png" width={100} height={100} alt="" />
+                    <img  className={array?.name==undefined?"none": ""}      src="https://th.bing.com/th/id/R.00f6e747fe634f139979659f809c5eef?rik=%2bRy0AbbN4fFLHw&riu=http%3a%2f%2fclipart-library.com%2fimg%2f963492.png&ehk=ucPcYex3Hw13xpXOyb111tV9zblqXxL4oxxE2pj223E%3d&risl=&pid=ImgRaw&r=0" width={200} height={170} alt="" />
               <p   className={array?.name==undefined?"none": ""}    style={{fontSize:"45px"}}>{array?.main?.temp+ "°C"}</p>
             
           <p   className={array?.name==undefined?"none": ""}    style={{fontSize:"25px"}}>{array?.name}</p>
