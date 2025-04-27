@@ -5,6 +5,8 @@ export let ContextFuntion = ({children})=>{
       
       let [name,setName] = useState("")
       let [array,setArray] = useState({})
+      let [isLoading,setLoading] = useState(false)
+      let [eror,setEror] = useState(false)
       let changeName = (e)=>{
              let inputcity = e.target.value
             
@@ -21,7 +23,7 @@ export let ContextFuntion = ({children})=>{
              setName(city)
       }
      
-     return  <Context.Provider value={{name,setName,changeName,array,setArray}} >
+     return  <Context.Provider value={{name,setName,changeName,array,setArray,isLoading,setLoading,eror,setEror}} >
              {children}
        </Context.Provider>
 }

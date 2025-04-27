@@ -109,3 +109,7 @@ body{
     display: flex;
     
   }
+  .fells-text{
+    display: flex;
+    align-items: center;
+  }
